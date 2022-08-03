@@ -1,6 +1,13 @@
 import "./ArticleCard.css";
+import { useNavigate } from "react-router-dom";
 
 const ArticleCard = ({ object }) => {
+  const navigate = useNavigate();
+
+  const redirecter = () => {
+    navigate(`/article/${object.id}`);
+  };
+
   return (
     <div className="articleCardDiv">
       <div className="artImageDiv">
@@ -10,6 +17,9 @@ const ArticleCard = ({ object }) => {
         <h3>{object.title}</h3>
         <p>{object.author}</p>
         <p>categoryId: {object.categoryId} </p>
+        <button onClick={redirecter} className="articleRedirectButton">
+          Click to Read More
+        </button>
       </div>
     </div>
   );
