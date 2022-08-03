@@ -19,6 +19,18 @@ const Comments = () => {
         );
       });
 
+  const submitter = (e) => {
+    e.preventDefault();
+
+    const newComment = {
+      name: e.target.commentInputName.value,
+      comment: e.target.commentInputComment.value,
+      id: 100 + comments.length,
+    };
+    console.log(newComment);
+    setComments([newComment, ...comments]);
+  };
+
   useEffect(() => {
     const getComments = async () => {
       try {
@@ -26,7 +38,6 @@ const Comments = () => {
           `https://my-json-server.typicode.com/Codaisseur/articles-comments-data/articles/${articleId}/comments`
         );
 
-        console.log(response.data);
         setComments(response.data);
       } catch (error) {
         console.log(error.message);
@@ -35,9 +46,27 @@ const Comments = () => {
 
     getComments();
   }, [articleId]);
+
+  console.log(comments);
   return (
     <div id="commentsDiv">
-      <div id="commentForm">form</div>
+      <div id="commentForm">
+        <form onSubmit={submitter}>
+          <label htmlFor="commentInputName">
+            Name:
+            <br />
+            <input type="text" id="commentInputName" />
+          </label>
+          <br />
+          <br />
+          <label htmlFor="commentInputComment">
+            Your Comment: <br /> <input type="text" id="commentInputComment" />
+          </label>
+          <br />
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
       <div id="commentsList">{renderComments}</div>
     </div>
   );

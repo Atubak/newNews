@@ -15,9 +15,6 @@
     align-items:flex-start;
     justify-content: space-around;
     gap: 30px;
-    max-height: 300px;
-    overflow: scroll;
-    overflow-x: unset;
 }
 
 .singleComment {
