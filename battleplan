@@ -21,3 +21,30 @@ feat 3:
 done!
 
 feat 4:
+. As a customer I want to read an article and leave comments, so I can feel involved.
+. There is an Article details page which displays a specific article
+. The comments for the article are also displayed
+. There is a form to leave your own comment
+
+Criteria Points
+-A the specific article is displayed with a title, author, image and content 1
+
+-A list of comments is displayed for the article, with name and comment 1
+
+-Id of the article the user wants to see is dynamic and determined using a route parameter 1
+
+-The data is fetched from the api, not hardcoded 1
+
+-There is a form on the page with inputs for name and comment and a button to submit 0.5
+
+-The state of the form is controlled using React useState hook(s) 0.5
+
+-When the form is submitted, a new comment is displayed on the page 2
+
+-The comment is displayed at the top of the list of comments 1
+
+-The comment form is seperate component and uses a callback prop to change the state of the parent component 3
+
+-Submitting the form refreshes the page -2
+-There is a warning in the console regarding "key" props -1
+Total 11

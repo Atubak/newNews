@@ -14,7 +14,9 @@
 }
 
 .artImageDiv img {
+    display: block;
     width: 300px;
+    margin: 0px auto;
 }
 
 .articleCardInfo {
