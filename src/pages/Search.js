@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 import ArticleCard from "../components/ArticleCard";
 
-const db = require("../db.json");
+import axios from "axios";
+
+// const db = require("../db.json");
 
 const Search = () => {
+  const { searchTerm } = useParams();
+  const navigate = useNavigate();
   const [articles, setArticles] = useState("");
-  const [filterText, setFilterText] = useState("");
-  // const navigate = useNavigate();
-  // const { searchTerm } = useParams();
+  const [filterText, setFilterText] = useState(searchTerm ? searchTerm : "");
   //trying to find out how to change the address path according to the search term
 
   const filterChanger = (e) => {
@@ -36,13 +39,32 @@ const Search = () => {
         });
 
   useEffect(() => {
-    //normally this would be an axios call to the server, using it this way now to work without wifi
-    console.log(db);
+    // //normally this would be an axios call to the server, using it this way now to work without wifi
+    // console.log(db);
 
-    setArticles(db.articles);
+    // setArticles(db.articles);
 
-    console.log("articles", articles);
+    //using axios call
+    const getArticles = async () => {
+      try {
+        console.log("api getter check");
+        const response = await axios.get(
+          "https://my-json-server.typicode.com/Codaisseur/articles-comments-data/articles"
+        );
+
+        setArticles(response.data);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
+    getArticles();
   }, []);
+
+  //this updates the address bar whenever the filter state changes
+  useEffect(() => {
+    navigate(`${filterText}`);
+  }, [filterText, navigate]);
 
   return (
     <div id="searchPage">
