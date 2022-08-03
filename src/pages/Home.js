@@ -8,7 +8,7 @@ const Home = () => {
   const [articles, setArticles] = useState("");
 
   const searchBtnHandler = () => {
-    navigate("/search");
+    navigate("/search/");
   };
 
   const latest = !articles
