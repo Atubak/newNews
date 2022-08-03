@@ -5,7 +5,7 @@ const db = require("../db.json");
 
 const Search = () => {
   const [articles, setArticles] = useState("");
-  const [filterText, setFilterText] = useState("nothing yet");
+  const [filterText, setFilterText] = useState("");
 
   const filterChanger = (e) => {
     //change the state of the input value
@@ -47,6 +47,7 @@ const Search = () => {
         id="articleFilterInput"
         type="text"
         value={filterText}
+        placeholder="Search Articles"
       />
       <div id="articleListDiv">{renderArticleList}</div>
     </div>
