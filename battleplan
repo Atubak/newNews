@@ -12,8 +12,12 @@ feat 3:
 
     .We want to display the articles if the searchterm matches something inside the title, catergoryId or author
 
-    -load all articles into the page
-    -make a text input
-    -make it controlled with state
-    -depending on the state, the rendered list of articles changes
-    -filters on title, category or author
+    x load all articles into the page
+    x make a text input
+    x make it controlled with state
+    x depending on the state, the rendered list of articles changes
+    x filters on title, category or author
+
+done!
+
+feat 4:
