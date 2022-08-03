@@ -1,0 +1,19 @@
+feat 1: done
+
+feat 2: done
+
+feat 3:
+
+    .As a reader I want to search articles, so I can find something I am interested in
+
+    .The search article page displays a list of articles
+
+    .Entering a searchterms filters the articles
+
+    .We want to display the articles if the searchterm matches something inside the title, catergoryId or author
+
+    -load all articles into the page
+    -make a text input
+    -make it controlled with state
+    -depending on the state, the rendered list of articles changes
+    -filters on title, category or author
