@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import Comments from "../components/Comments";
+
 import "./ArticleDetail.css";
 
 const ArticleDetail = () => {
@@ -22,7 +24,7 @@ const ArticleDetail = () => {
     };
 
     getArticle();
-  }, []);
+  }, [articleId]);
 
   return (
     <div id="articleDetailPage">
@@ -35,7 +37,7 @@ const ArticleDetail = () => {
         <br />
         <p>{article.content}</p>
       </div>
-      {/* here comes the comments component */}
+      {<Comments />}
     </div>
   );
 };

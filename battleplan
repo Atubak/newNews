@@ -27,13 +27,13 @@ feat 4:
 . There is a form to leave your own comment
 
 Criteria Points
--A the specific article is displayed with a title, author, image and content 1
+x A the specific article is displayed with a title, author, image and content 1
 
--A list of comments is displayed for the article, with name and comment 1
+x A list of comments is displayed for the article, with name and comment 1
 
--Id of the article the user wants to see is dynamic and determined using a route parameter 1
+x Id of the article the user wants to see is dynamic and determined using a route parameter 1
 
--The data is fetched from the api, not hardcoded 1
+x The data is fetched from the api, not hardcoded 1
 
 -There is a form on the page with inputs for name and comment and a button to submit 0.5
 
