@@ -1,4 +1,10 @@
 
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #navbar {
   border: 2px solid
 }

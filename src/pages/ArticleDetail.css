@@ -1,0 +1,10 @@
+#articleDetailPage {
+    background-color: aquamarine;
+    width: 80%;
+}
+
+#articleContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
