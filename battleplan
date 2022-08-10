@@ -37,13 +37,13 @@ x The data is fetched from the api, not hardcoded 1
 
 x There is a form on the page with inputs for name and comment and a button to submit 0.5
 
--The state of the form is controlled using React useState hook(s) 0.5
+x The state of the form is controlled using React useState hook(s) 0.5
 
--When the form is submitted, a new comment is displayed on the page 2
+x When the form is submitted, a new comment is displayed on the page 2
 
--The comment is displayed at the top of the list of comments 1
+x The comment is displayed at the top of the list of comments 1
 
--The comment form is seperate component and uses a callback prop to change the state of the parent component 3
+The comment form is seperate component and uses a callback prop to change the state of the parent component 3
 
 -Submitting the form refreshes the page -2
 -There is a warning in the console regarding "key" props -1

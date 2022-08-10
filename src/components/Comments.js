@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import CommentsForm from "./CommentsForm";
+
 import "./Comments.css";
 
 const Comments = () => {
@@ -39,7 +41,7 @@ const Comments = () => {
       comment: e.target.commentInputComment.value,
       id: 100 + comments.length,
     };
-    console.log(newComment);
+    // console.log(newComment);
     setInputValues(initialValues);
     setComments([newComment, ...comments]);
   };
@@ -60,40 +62,15 @@ const Comments = () => {
     getComments();
   }, [articleId]);
 
-  console.log(comments);
+  // console.log(comments);
 
   return (
     <div id="commentsDiv">
-      <div id="commentForm">
-        <form onSubmit={submitter}>
-          <label htmlFor="commentInputName">
-            Name:
-            <br />
-            <input
-              type="text"
-              value={inputValues.name}
-              onChange={inputHandler}
-              name="name"
-              id="commentInputName"
-            />
-          </label>
-          <br />
-          <br />
-          <label htmlFor="commentInputComment">
-            Your Comment: <br />
-            <input
-              type="text"
-              value={inputValues.comment}
-              onChange={inputHandler}
-              name="comment"
-              id="commentInputComment"
-            />
-          </label>
-          <br />
-          <br />
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
+      <CommentsForm
+        submitter={submitter}
+        inputValues={inputValues}
+        inputHandler={inputHandler}
+      />
       <div id="commentsList">{renderComments}</div>
     </div>
   );
