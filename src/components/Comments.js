@@ -5,8 +5,14 @@ import { useParams } from "react-router-dom";
 import "./Comments.css";
 
 const Comments = () => {
+  const initialValues = {
+    name: "",
+    comment: "",
+  };
+
   const { articleId } = useParams();
   const [comments, setComments] = useState("");
+  const [inputValues, setInputValues] = useState(initialValues);
 
   const renderComments = !comments
     ? "no comments yet!"
@@ -19,6 +25,12 @@ const Comments = () => {
         );
       });
 
+  const inputHandler = (e) => {
+    const { name, value } = e.target;
+    const newValues = { ...inputValues, [name]: value };
+    setInputValues(newValues);
+  };
+
   const submitter = (e) => {
     e.preventDefault();
 
@@ -28,6 +40,7 @@ const Comments = () => {
       id: 100 + comments.length,
     };
     console.log(newComment);
+    setInputValues(initialValues);
     setComments([newComment, ...comments]);
   };
 
@@ -48,6 +61,7 @@ const Comments = () => {
   }, [articleId]);
 
   console.log(comments);
+
   return (
     <div id="commentsDiv">
       <div id="commentForm">
@@ -55,12 +69,25 @@ const Comments = () => {
           <label htmlFor="commentInputName">
             Name:
             <br />
-            <input type="text" id="commentInputName" />
+            <input
+              type="text"
+              value={inputValues.name}
+              onChange={inputHandler}
+              name="name"
+              id="commentInputName"
+            />
           </label>
           <br />
           <br />
           <label htmlFor="commentInputComment">
-            Your Comment: <br /> <input type="text" id="commentInputComment" />
+            Your Comment: <br />
+            <input
+              type="text"
+              value={inputValues.comment}
+              onChange={inputHandler}
+              name="comment"
+              id="commentInputComment"
+            />
           </label>
           <br />
           <br />

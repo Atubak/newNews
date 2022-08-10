@@ -35,7 +35,7 @@ x Id of the article the user wants to see is dynamic and determined using a rout
 
 x The data is fetched from the api, not hardcoded 1
 
--There is a form on the page with inputs for name and comment and a button to submit 0.5
+x There is a form on the page with inputs for name and comment and a button to submit 0.5
 
 -The state of the form is controlled using React useState hook(s) 0.5
 
