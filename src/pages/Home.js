@@ -20,9 +20,8 @@ const Home = () => {
   useEffect(() => {
     const getArticles = async () => {
       try {
-        const request = await axios.get(
-          "https://my-json-server.typicode.com/Codaisseur/articles-comments-data/articles"
-        );
+        const request = await axios.get("http://localhost:4000/articles");
+        console.log(request.data);
         setArticles(request.data);
       } catch (e) {
         console.log(e.message);

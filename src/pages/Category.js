@@ -19,7 +19,7 @@ const Category = () => {
     const getCategoryArticles = async () => {
       try {
         const response = await axios.get(
-          `https://my-json-server.typicode.com/Codaisseur/articles-comments-data/categories/${categoryId}/articles`
+          ` http://localhost:4000/categories/${categoryId}/articles`
         );
 
         console.log(response.data);

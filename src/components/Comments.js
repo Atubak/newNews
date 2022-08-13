@@ -50,7 +50,7 @@ const Comments = () => {
     const getComments = async () => {
       try {
         const response = await axios.get(
-          `https://my-json-server.typicode.com/Codaisseur/articles-comments-data/articles/${articleId}/comments`
+          `http://localhost:4000/articles/${articleId}/comments`
         );
 
         setComments(response.data);
