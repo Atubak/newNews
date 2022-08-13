@@ -30,7 +30,7 @@ const Category = () => {
     };
 
     getCategoryArticles();
-  }, []);
+  }, [categoryId]);
 
   return (
     <div id="categoryPage">
